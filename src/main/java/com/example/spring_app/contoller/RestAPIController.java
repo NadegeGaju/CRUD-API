@@ -23,6 +23,7 @@ public class RestAPIController {
     @PostMapping("/create-book")
     public ResponseEntity<Book> createBook(@Valid @RequestBody Book book) {
         Book savedBook = bookRepository.save(book);
+        System.out.println("Book saved: " + savedBook);
         return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
     }
 
